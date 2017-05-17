@@ -18,6 +18,7 @@ public class FunFactsActivity extends AppCompatActivity {
 
     private RelativeLayout mRelativeLayout;
     private FactBook mFactBook = new FactBook();
+    private ColorWheel mColorWheel = new ColorWheel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,9 @@ public class FunFactsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mFactsTextView.setText(mFactBook.getFact());
-                mRelativeLayout.setBackgroundColor(Color.RED);
+                int color = mColorWheel.getColor();
+                mRelativeLayout.setBackgroundColor(color);
+                mShowFactButton.setTextColor(color);
             }
         };
 
